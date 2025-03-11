@@ -159,87 +159,103 @@
 // });
 
 // 42. Introduction to Object
-const jonasArray = [
-    'Jonas',
-    'Schmedtmann',
-    2037 - 1991,
-    'teacher',
-    ['Michael', 'Peter', 'Steven']
-]
-console.log(jonasArray)
+// const jonasArray = [
+//     'Jonas',
+//     'Schmedtmann',
+//     2037 - 1991,
+//     'teacher',
+//     ['Michael', 'Peter', 'Steven']
+// ]
+// console.log(jonasArray)
 
-const jonasObject = {
-    firstName: 'Jonas',
-    lastName: 'Schmedtmann',
-    age: 2037 - 1991,
-    job: 'teacher',
-    friends: ['Michael', 'Peter', 'Steven']
-}
+// const jonasObject = {
+//     firstName: 'Jonas',
+//     lastName: 'Schmedtmann',
+//     age: 2037 - 1991,
+//     job: 'teacher',
+//     friends: ['Michael', 'Peter', 'Steven']
+// }
 
-console.log(jonasObject)
+// console.log(jonasObject)
 
-// 43. Dot vs. Bracket Notation
-console.log(jonasObject.firstName)
-console.log(jonasObject['lastName'])
+// // 43. Dot vs. Bracket Notation
+// console.log(jonasObject.firstName)
+// console.log(jonasObject['lastName'])
 
-const nameKey = 'Name';
-console.log(jonasObject['first' + nameKey]);
-console.log(jonasObject['last' + nameKey]);
+// const nameKey = 'Name';
+// console.log(jonasObject['first' + nameKey]);
+// console.log(jonasObject['last' + nameKey]);
 
-const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
+// const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
 
-if (jonasObject[interestedIn]) {
-    console.log(jonasObject[interestedIn]);
-} else {
-    console.log(`Do not have "${interestedIn}"`);
-}
+// if (jonasObject[interestedIn]) {
+//     console.log(jonasObject[interestedIn]);
+// } else {
+//     console.log(`Do not have "${interestedIn}"`);
+// }
 
-jonasObject.location = 'Portugal';
-jonasObject['twitter'] = '@jonasschedtman';
-console.log(jonasObject);
+// jonasObject.location = 'Portugal';
+// jonasObject['twitter'] = '@jonasschedtman';
+// console.log(jonasObject);
 
-// Chanllenge
-// Jonas has 3 frs, and his best fr is called Michael
-console.log(jonasObject.friends)
-jonasObject.bestFriend = jonasObject.friends[0];
-console.log(jonasObject)
+// // Chanllenge
+// // Jonas has 3 frs, and his best fr is called Michael
+// console.log(jonasObject.friends)
+// jonasObject.bestFriend = jonasObject.friends[0];
+// console.log(jonasObject)
 
-// 44. Object Methods
-jonasObject.hasDriversLicense = true;
+// // 44. Object Methods
+// jonasObject.hasDriversLicense = true;
 
-jonasObject.calcAge = (birthYear) => {
-    console.log(this); 
-    return 2037 - birthYear;
-};
+// jonasObject.calcAge = (birthYear) => {
+//     console.log(this); 
+//     return 2037 - birthYear;
+// };
 
-console.log(jonasObject.calcAge(1991));
+// console.log(jonasObject.calcAge(1991));
 
-// Assignment 7
-const mark = {
-    fullName: 'Mark Miller',
-    mass: 78,
-    height: 1.69,
-    calcBMI: function () {
-      this.bmi = this.mass / (this.height * this.height);
-      return this.bmi;
-    }
-  };
+// // Assignment 7
+// const mark = {
+//     fullName: 'Mark Miller',
+//     mass: 78,
+//     height: 1.69,
+//     calcBMI: function () {
+//       this.bmi = this.mass / (this.height * this.height);
+//       return this.bmi;
+//     }
+//   };
    
-  const john = {
-    fullName: 'John Smith',
-    mass: 92,
-    height: 1.95,
-    calcBMI: function () {
-      this.bmi = this.mass / (this.height * this.height);
-      return this.bmi;
-    }
-  };
+//   const john = {
+//     fullName: 'John Smith',
+//     mass: 92,
+//     height: 1.95,
+//     calcBMI: function () {
+//       this.bmi = this.mass / (this.height * this.height);
+//       return this.bmi;
+//     }
+//   };
    
-  mark.calcBMI();
-  john.calcBMI();
+//   mark.calcBMI();
+//   john.calcBMI();
    
-  if (mark.bmi > john.bmi) {
-    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`)
-  } else if (john.bmi > mark.bmi) {
-    console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`)
+//   if (mark.bmi > john.bmi) {
+//     console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`)
+//   } else if (john.bmi > mark.bmi) {
+//     console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`)
+//   }
+
+// Assignment 8
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
   }
+  
+  /* Write your code below. Good luck! 🙂 */
+  const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+  
+  const tips = [];
+  for (let i = 0; i < bills.length; i++) 
+      tips[i] = calcTip(bills[i])
+  
+  const totals = [];
+  for (let i = 0; i < bills.length; i++) 
+      totals[i] = bills[i] + tips[i]
