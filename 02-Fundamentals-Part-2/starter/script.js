@@ -177,3 +177,39 @@ const jonasObject = {
 }
 
 console.log(jonasObject)
+
+// 43. Dot vs. Bracket Notation
+console.log(jonasObject.firstName)
+console.log(jonasObject['lastName'])
+
+const nameKey = 'Name';
+console.log(jonasObject['first' + nameKey]);
+console.log(jonasObject['last' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
+
+if (jonasObject[interestedIn]) {
+    console.log(jonasObject[interestedIn]);
+} else {
+    console.log(`Do not have "${interestedIn}"`);
+}
+
+jonasObject.location = 'Portugal';
+jonasObject['twitter'] = '@jonasschedtman';
+console.log(jonasObject);
+
+// Chanllenge
+// Jonas has 3 frs, and his best fr is called Michael
+console.log(jonasObject.friends)
+jonasObject.bestFriend = jonasObject.friends[0];
+console.log(jonasObject)
+
+// 44. Object Methods
+jonasObject.hasDriversLicense = true;
+
+jonasObject.calcAge = (birthYear) => {
+    console.log(this); 
+    return 2037 - birthYear;
+};
+
+console.log(jonasObject.calcAge(1991));
